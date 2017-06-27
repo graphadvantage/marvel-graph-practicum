@@ -27,7 +27,7 @@ You will use a combination of tools to load data, design a schema and deploy a f
 
 You will now have some Character nodes in your graph.  If you navigate to http://localhost:8080, you should see something like this:
 
-![neo4j_browser_images](https://user-images.githubusercontent.com/5991751/27566477-7a2ae1d2-5a9a-11e7-80fe-53ee111d0b5c.png)
+![neo4j_browser_images](https://user-images.githubusercontent.com/5991751/27593214-6e3466ca-5b0b-11e7-86a9-01857f588065.png)
 
 
 
@@ -86,13 +86,16 @@ You've probably noticed that we are using the Bolt driver - with default admin c
 1. Write load queries for the marvel_comics.csv and marvel_series.csv to make Comic and Series nodes.
 2. Inspect your results - notice anything interesting?  Images? Garbage? What about those Json lists?
 3. Rewrite your queries to parse the Json lists into useable property arrays for name and resourceURI
-4. Throw a CASE statement in to avoid writing blank arrays
+4. Throw in a CASE statement to avoid writing blank arrays
 5. Add a uniqueness constraint on each of the id fields for each of the three nodes.
-6. Write a query that searches (Character {name: }) for a particular value. Note the response time. Do something to this node to make the search go faster. Note the new response time.
+6. Write a query that searches (Character {name: }) for a particular value. Note the response time. Do something to this node to make searches go faster. Note the new response time.
+
+### Exercise 6: Refactor nodes
+1. Notice that there is a list of Creators in the Comic node.
+2. Refactor this to a new Creator node
 
 
-
-### Exercise 6:  Refactor relationships
+### Exercise 7:  Refactor relationships
 
 So now you have a bunch of nodes - but how are they related?
 
@@ -103,14 +106,17 @@ So now you have a bunch of nodes - but how are they related?
 
 
 
-### Exercise 7: Database backup
+### Exercise 8: Database backup
 
 1. Once you've finalized your updates, make a backup of your database using the Neo4j admin tool
 2. Verify that you can restore the database from this backup
 
+### Exercise 9: Data dump and high speed import
+1. Use the apoc export CSV tool to create CSV exports for your nodes and relationships
+2. Use the Neo4j Import tool to these files to a new database
 
 
-### Exercise 8: Some analytics
+### Exercise 10: Some analytics
 
 So now you have graph - let's see what's in it!
 
@@ -133,16 +139,14 @@ RETURN map
 ```
 
 
-### Exercise 9:  Application enhancements
+### Exercise 11:  Application API enhancements
 
-1. Write endpoints for retrieving comics and series from a character
+1. Write/update endpoints for retrieving some comics and series for a specific character
 2. Enhance the application to pull through details, including images for comics and series
 3. Render these in the Character panel
+.. there are some commented-out code snippets that might be helpful for serializing arrays...
 
 
+### Excercise 12: Make it great!
 
-### Excercise 10: Make it great!
-
-1. Seems like it would be cool to search by a Series and get the characters that appeared in that series... in a new page perhaps? Or maybe something else entirely?  
-
-Do your best hacking, and we'll put it up for a class vote!
+Anything goes - seems like it would be cool to search by a Series and get the characters that appeared in that series... in a new page perhaps? Characters who know each other? Creator summary? Or maybe something else entirely?  Do your best hacking, and we'll put it up for a class vote!  
