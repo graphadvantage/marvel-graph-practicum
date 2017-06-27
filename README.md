@@ -141,7 +141,7 @@ RETURN map
 
 
 
-### Excercise 10:
+### Excercise 10: Make it great!
 
 1. Seems like it would be cool to search by a Series and get the characters that appeared in that series... in a new page perhaps? Or maybe something else entirely?  
 
