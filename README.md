@@ -118,7 +118,7 @@ So now you have graph - let's see what's in it!
 2. What are the top 5 Series by number of Comics, and how many Comics do they have?
 3. Which are the 3 Series with the earliest endYears, and how many unique and shared characters do they have?
 4. Which Character has the highest page rank?
-5. If there is extra data you'd like from the API to further enrich your graph feel free to write a routine to grab it.  You can use apoc or modify the Jupyter scripts. Here's a hint:
+5. If there is extra data you'd like from the API to further enrich your graph feel free to write a routine to grab it.  You can use apoc or modify the Jupyter scripts. I've provided some sample JSON for you to check out, and here's a hint:
 
 ```
 WITH "Iron%20Man" AS character,
